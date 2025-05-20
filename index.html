@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real Madrid CF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/estilo.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Real Madrid CF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#historia" class="nav-link">Historia</a></li>
+                    <li class="nav-item"><a href="#jugadores" class="nav-link">Jugadores</a></li>
+                    <li class="nav-item"><a href="#trofeos" class="nav-link">Trofeos</a></li>
+                    <li class="nav-item"><a href="#video" class="nav-link">Video Oficial</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero bg-dark text-white text-center d-flex flex-column justify-content-center align-items-center">
+        <h1 class="display-4 fw-bold">¡Hala Madrid!</h1>
+        <p class="lead mb-4">El club más grande de la historia del fútbol</p>
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Logo Real Madrid"
+            class="logo" />
+
+        <!-- Audio oculto pero listo para reproducir -->
+        <audio id="himno-audio" loop>
+            <source src="audio/audio.mp3" type="audio/mp3" />
+            Tu navegador no soporta audio.
+        </audio>
+
+        <!-- Botón para controlar audio -->
+        <button onclick="toggleHimno()">Escuchar / Pausar Himno</button>
+    </header>
+
+    <!-- Historia -->
+    <section id="historia" class="container my-5">
+        <h2 class="text-center mb-4">Nuestra Historia</h2>
+        <p class="text-center mx-auto" style="max-width: 700px;">
+            Fundado en 1902, Real Madrid Club de Fútbol es una institución deportiva legendaria, con una trayectoria
+            llena de éxitos y grandes figuras del fútbol mundial. Sus 14 títulos de UEFA Champions League son un récord
+            histórico.
+        </p>
+        <div class="text-center mt-4">
+            <img src="https://i.pinimg.com/736x/be/89/84/be8984c0c5f5c288fe5a846a637751d7.jpg"
+                alt="Historia Real Madrid" class="img-fluid rounded shadow" />
+        </div>
+    </section>
+
+    <!-- Jugadores destacados-->
+    <section id="jugadores" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Jugadores Destacados</h2>
+            <div class="row g-4 justify-content-center">
+                <!-- Cristiano Ronaldo -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="https://i.pinimg.com/736x/75/82/2d/75822db2001ef0ceb0f36ef28671af47.jpg"
+                            class="card-img-top" alt="Cristiano Ronaldo" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Cristiano Ronaldo</h5>
+                            <p class="card-text">Máximo goleador histórico, dejó un legado imborrable.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Karim Benzema -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="https://i.pinimg.com/736x/ca/cc/93/cacc93a77f39dae896e31240d7109b5e.jpg"
+                            class="card-img-top" alt="Karim Benzema" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Karim Benzema</h5>
+                            <p class="card-text">Capitán y goleador en los últimos años, pieza fundamental.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Luka Modrić -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="https://i.pinimg.com/736x/fc/a6/8f/fca68f952a0d2986ef4c9395dd1d296d.jpg"
+                            class="card-img-top" alt="Luka Modrić" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Luka Modrić</h5>
+                            <p class="card-text">Motor del mediocampo, campeón y balon de oro 2018.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partidos -->
+    <section class="slider-wrapper">
+        <div class="slider">
+            <!-- Partido 1 -->
+            <div class="slide">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Sevilla_FC_logo.svg/1200px-Sevilla_FC_logo.svg.png"
+                    class="team-logo" alt="Sevilla">
+                <div class="match-info">
+                    <h3>Sevilla vs Real Madrid</h3>
+                    <p>20 Mayo 2025 | 20:00</p>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" class="team-logo"
+                    alt="Real Madrid">
+            </div>
+
+            <!-- Partido 2 -->
+            <div class="slide">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" class="team-logo"
+                    alt="Real Madrid">
+                <div class="match-info">
+                    <h3>Real Madrid vs Real Sociedad</h3>
+                    <p>22 Mayo 2025 | 19:00</p>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/ca/6/68/Real_Sociedad_de_Futbol_logo.png"
+                    class="team-logo" alt="Real Sociedad">
+            </div>
+
+            <!-- Partido 3 -->
+            <div class="slide">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" class="team-logo"
+                    alt="Real Madrid">
+                <div class="match-info">
+                    <h3>Real Madrid vs Al Hilal</h3>
+                    <p>24 Mayo 2025 | 21:00</p>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Al_Hilal_SFC_Logo.svg/1584px-Al_Hilal_SFC_Logo.svg.png"
+                    class="team-logo" alt="Al Hilal">
+            </div>
+
+            <!-- Partido 4 -->
+            <div class="slide">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" class="team-logo"
+                    alt="Real Madrid">
+                <div class="match-info">
+                    <h3>Real Madrid vs Pachuca</h3>
+                    <p>26 Mayo 2025 | 18:30</p>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Pachuca_Tuzos_logo.svg/1200px-Pachuca_Tuzos_logo.svg.png"
+                    class="team-logo" alt="Pachuca">
+            </div>
+
+            <!-- Partido 5 -->
+            <div class="slide">
+                <img src="https://img.uefa.com/imgml/TP/teams/logos/240x240/50030.png" class="team-logo"
+                    alt="Salzburgo">
+                <div class="match-info">
+                    <h3>Salzburgo vs Real Madrid</h3>
+                    <p>28 Mayo 2025 | 20:45</p>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" class="team-logo"
+                    alt="Real Madrid">
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="prevBtn">&#10094;</button>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Trofeos -->
+    <section id="trofeos" class="container my-5">
+        <h2 class="text-center mb-4">Trofeos Destacados</h2>
+        <div class="row text-center g-4">
+            <div class="col-md-3">
+                <i class="fas fa-trophy fa-3x text-warning"></i>
+                <h5 class="mt-2">15 UEFA Champions League</h5>
+                <p>Récord histórico en competiciones europeas.</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fas fa-medal fa-3x text-primary"></i>
+                <h5 class="mt-2">36 Ligas Españolas</h5>
+                <p>El máximo ganador de La Liga.</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fas fa-star fa-3x text-info"></i>
+                <h5 class="mt-2">20 Copas del Rey</h5>
+                <p>Tradición y gloria en el torneo nacional.</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fas fa-globe fa-3x text-success"></i>
+                <h5 class="mt-2">4 Mundiales de Clubes</h5>
+                <p>Campeón mundial de clubes en varias ocasiones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Oficial -->
+    <section id="video" class="container my-5 text-center">
+        <h2 class="mb-4">Video Oficial</h2>
+        <div class="ratio ratio-16x9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uNCvKUc4_bc?si=Si-kDhaXJIIKTDch" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

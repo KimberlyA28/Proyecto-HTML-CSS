@@ -1,0 +1,177 @@
+/* HERO */
+.hero {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/f/fd/Santiago_Bernabeu_Stadium_2019.jpg') no-repeat center center/cover;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centrar contenido horizontalmente */
+  color: #f0f0f0;
+  padding: 40px 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  filter: brightness(0.65);
+  font-family: 'Mulish', sans-serif;
+}
+
+.logo {
+  width: 130px;
+  margin-top: 20px;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+}
+
+/* AUDIO */
+#btnHimno {
+  background-color: #1a365d;  /* Azul profundo */
+  border: none;
+  padding: 14px 28px;
+  color: #e0e7ff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  border-radius: 35px;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(26, 54, 93, 0.6);
+  transition: background-color 0.35s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
+  margin-top: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'Mulish', sans-serif;
+}
+
+#btnHimno:hover {
+  background-color: #375a9b; /* Azul más claro */
+  box-shadow: 0 6px 18px rgba(55, 90, 155, 0.8);
+  transform: scale(1.08);
+}
+
+#btnHimno:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(26, 54, 93, 0.5);
+}
+
+/* SLIDER */
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  max-width: 100%;
+  background: rgba(25, 41, 58, 0.9);
+  border-radius: 12px;
+  margin: 50px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.slide {
+  min-width: 100vw;
+  box-sizing: border-box;
+  padding: 50px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  color: #f1f5f9;
+  font-family: 'Mulish', sans-serif;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.85);
+  user-select: none;
+}
+
+.team-logo {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.7));
+  transition: transform 0.3s ease;
+}
+
+.team-logo:hover {
+  transform: scale(1.1);
+}
+
+.match-info {
+  text-align: center;
+  max-width: 380px;
+}
+
+.match-info h3 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #e0e7ff;
+}
+
+.match-info p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+/* Botones de navegación */
+.buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+  padding: 0 25px;
+  z-index: 10;
+}
+
+.buttons button {
+  pointer-events: all;
+  background-color: rgba(26, 54, 93, 0.75);
+  border: none;
+  color: #e0e7ff;
+  font-size: 2.8rem;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 50%;
+  user-select: none;
+  transition: background-color 0.35s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 10px rgba(26, 54, 93, 0.7);
+}
+
+.buttons button:hover {
+  background-color: rgba(55, 90, 155, 0.95);
+  box-shadow: 0 6px 20px rgba(55, 90, 155, 0.9);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .slide {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    padding: 30px 15px;
+  }
+
+  .match-info {
+    max-width: 100%;
+  }
+
+  .team-logo {
+    width: 70px;
+  }
+
+  .match-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .match-info p {
+    font-size: 1.1rem;
+  }
+
+  .buttons button {
+    font-size: 2rem;
+    padding: 10px 14px;
+  }
+}
