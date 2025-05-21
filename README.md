@@ -28,15 +28,17 @@ Este proyecto es una página web dedicada al club de fútbol **Real Madrid CF**,
 
 ## 📁 Estructura de carpetas
 
+```sh
 /audio
-└── audio.mp3
+├── audio.mp3
 /css
-└── estilo.css
+├── estilo.css
 /img
-└── estilo.css
+├── estilo.css
 /index.html
 /README.md
 /script.js
+```
 
 ## 📸 Capturas de pantalla
 
