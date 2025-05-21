@@ -1,3 +1,4 @@
+// ----- Carrusel (Slider) -----
 const slider = document.querySelector('.slider');
 const slides = document.querySelectorAll('.slide');
 const prevBtn = document.getElementById('prevBtn');
@@ -5,37 +6,47 @@ const nextBtn = document.getElementById('nextBtn');
 
 let index = 0;
 const totalSlides = slides.length;
+let autoplayInterval;
 
-const showSlide = (i) => {
-  index = (i + totalSlides) % totalSlides;
-  slider.style.transform = `translateX(-${index * 100}vw)`;  // Aquí usé template literals correctamente
-};
+// Mostrar la diapositiva actual
+function showSlide(i) {
+    index = (i + totalSlides) % totalSlides;
+    slider.style.transform = `translateX(-${index * 100}vw)`;
+}
 
-prevBtn.addEventListener('click', () => showSlide(index - 1));
-nextBtn.addEventListener('click', () => showSlide(index + 1));
+// Cambiar diapositiva manualmente
+prevBtn?.addEventListener('click', () => showSlide(index - 1));
+nextBtn?.addEventListener('click', () => showSlide(index + 1));
 
-let autoplayInterval = setInterval(() => {
-  showSlide(index + 1);
-}, 4000);
+// Autoplay
+function startAutoplay() {
+    autoplayInterval = setInterval(() => showSlide(index + 1), 4000);
+}
+function stopAutoplay() {
+    clearInterval(autoplayInterval);
+}
 
-slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-slider.addEventListener('mouseleave', () => {
-  autoplayInterval = setInterval(() => showSlide(index + 1), 4000);
-});
+// Pausar autoplay al pasar el mouse
+slider?.addEventListener('mouseenter', stopAutoplay);
+slider?.addEventListener('mouseleave', startAutoplay);
 
 showSlide(index);
+startAutoplay();
 
-// Audio himno
-
+// ----- Audio Himno -----
 const audio = document.getElementById('himno-audio');
-const boton = document.querySelector('button[onclick="toggleHimno()"]');
+const botonHimno = document.getElementById('himno-btn');
 
 function toggleHimno() {
-  if (audio.paused) {
-    audio.play();
-    boton.textContent = 'Pausar Himno';
-  } else {
-    audio.pause();
-    boton.textContent = 'Escuchar Himno';
-  }
+    if (!audio) return;
+
+    if (audio.paused) {
+        audio.play();
+        botonHimno.textContent = 'Pausar Himno';
+    } else {
+        audio.pause();
+        botonHimno.textContent = 'Escuchar Himno';
+    }
 }
+
+botonHimno?.addEventListener('click', toggleHimno);

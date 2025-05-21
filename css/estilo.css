@@ -1,177 +1,305 @@
+:root {
+    --dorado: #f2c94c;
+    --azul-oscuro: #0a0a23;
+    --blanco: #ffffff;
+    --gris-claro: #f5f5f5;
+    --sombra: rgba(0, 0, 0, 0.15);
+    --transicion: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--gris-claro);
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--azul-oscuro) !important;
+    box-shadow: 0 4px 6px var(--sombra);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: var(--dorado) !important;
+}
+
+.nav-link {
+    color: var(--blanco) !important;
+    transition: var(--transicion);
+}
+
+.nav-link:hover {
+    color: var(--dorado) !important;
+}
+
 /* HERO */
 .hero {
-  background: url('https://upload.wikimedia.org/wikipedia/commons/f/fd/Santiago_Bernabeu_Stadium_2019.jpg') no-repeat center center/cover;
-  height: 60vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; /* Centrar contenido horizontalmente */
-  color: #f0f0f0;
-  padding: 40px 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
-  filter: brightness(0.65);
-  font-family: 'Mulish', sans-serif;
+    min-height: 80vh;
+    padding: 60px 20px;
+    background-color: #111;
+    text-align: center;
 }
 
-.logo {
-  width: 130px;
-  margin-top: 20px;
-  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    color: #ffffff;
 }
 
-/* AUDIO */
-#btnHimno {
-  background-color: #1a365d;  /* Azul profundo */
-  border: none;
-  padding: 14px 28px;
-  color: #e0e7ff;
-  font-weight: 700;
-  font-size: 1.15rem;
-  border-radius: 35px;
-  cursor: pointer;
-  box-shadow: 0 5px 12px rgba(26, 54, 93, 0.6);
-  transition: background-color 0.35s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  user-select: none;
-  margin-top: 20px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-family: 'Mulish', sans-serif;
+.hero p {
+    font-size: 1.3rem;
+    color: #dddddd;
 }
 
-#btnHimno:hover {
-  background-color: #375a9b; /* Azul más claro */
-  box-shadow: 0 6px 18px rgba(55, 90, 155, 0.8);
-  transform: scale(1.08);
+.hero-logo {
+    max-width: 150px;
+    height: auto;
+    transition: all 0.3s ease;
 }
 
-#btnHimno:active {
-  transform: scale(0.95);
-  box-shadow: 0 3px 8px rgba(26, 54, 93, 0.5);
+#himno-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin-top: 15px;
 }
 
-/* SLIDER */
+.btn-outline-light {
+    border-color: var(--dorado);
+    color: var(--dorado);
+    transition: var(--transicion);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--dorado);
+    color: #000;
+}
+
+/* SECCIONES */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--dorado);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* TARJETAS */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px var(--sombra);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-title {
+    color: var(--dorado);
+}
+
+/* PLANTILLA ACTUAL */
+.scrolling-wrapper {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--dorado) #ddd;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scrolling-wrapper::-webkit-scrollbar-track {
+    background: #ddd;
+}
+
+.scrolling-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--dorado);
+    border-radius: 10px;
+}
+
+.card-body small {
+    color: #666;
+}
+
+/* SLIDER DE PARTIDOS */
 .slider-wrapper {
-  position: relative;
-  overflow: hidden;
-  width: 100vw;
-  max-width: 100%;
-  background: rgba(25, 41, 58, 0.9);
-  border-radius: 12px;
-  margin: 50px 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background: #1c1c1c;
+    color: var(--blanco);
+    padding: 40px 0;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .slider {
-  display: flex;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 }
 
 .slide {
-  min-width: 100vw;
-  box-sizing: border-box;
-  padding: 50px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  color: #f1f5f9;
-  font-family: 'Mulish', sans-serif;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.85);
-  user-select: none;
+    min-width: 320px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 15px;
+    scroll-snap-align: start;
+    text-align: center;
+    box-shadow: 0 6px 12px var(--sombra);
+    transition: var(--transicion);
+}
+
+.slide:hover {
+    transform: scale(1.03);
 }
 
 .team-logo {
-  width: 100px;
-  height: auto;
-  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.7));
-  transition: transform 0.3s ease;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 10px;
 }
 
-.team-logo:hover {
-  transform: scale(1.1);
-}
-
-.match-info {
-  text-align: center;
-  max-width: 380px;
-}
-
-.match-info h3 {
-  font-size: 2rem;
-  margin-bottom: 14px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: #e0e7ff;
-}
-
-.match-info p {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #cbd5e1;
-  line-height: 1.4;
-}
-
-/* Botones de navegación */
-.buttons {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  pointer-events: none;
-  padding: 0 25px;
-  z-index: 10;
-}
-
+/* FLECHAS SLIDER */
 .buttons button {
-  pointer-events: all;
-  background-color: rgba(26, 54, 93, 0.75);
-  border: none;
-  color: #e0e7ff;
-  font-size: 2.8rem;
-  cursor: pointer;
-  padding: 12px 18px;
-  border-radius: 50%;
-  user-select: none;
-  transition: background-color 0.35s ease, box-shadow 0.3s ease;
-  box-shadow: 0 3px 10px rgba(26, 54, 93, 0.7);
-}
-
-.buttons button:hover {
-  background-color: rgba(55, 90, 155, 0.95);
-  box-shadow: 0 6px 20px rgba(55, 90, 155, 0.9);
-}
-
-/* Responsive para móviles */
-@media (max-width: 768px) {
-  .slide {
-    flex-direction: column;
-    text-align: center;
-    gap: 25px;
-    padding: 30px 15px;
-  }
-
-  .match-info {
-    max-width: 100%;
-  }
-
-  .team-logo {
-    width: 70px;
-  }
-
-  .match-info h3 {
-    font-size: 1.4rem;
-  }
-
-  .match-info p {
-    font-size: 1.1rem;
-  }
-
-  .buttons button {
+    background: none;
+    border: none;
     font-size: 2rem;
-    padding: 10px 14px;
-  }
+    color: var(--dorado);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+/* TROFEOS */
+#trofeos i {
+    color: var(--dorado);
+    margin-bottom: 10px;
+}
+
+#trofeos h5 {
+    color: var(--azul-oscuro);
+}
+
+/* VIDEO */
+.video-wrapper {
+    width: 70%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 576px) {
+    .video-wrapper {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* FOOTER */
+footer {
+    background-color: #000;
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--dorado);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 2.5rem;
+    }
+
+    .hero-logo {
+        max-width: 120px;
+    }
+
+    #himno-btn {
+        font-size: 1rem;
+    }
+
+    .video-wrapper {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero-logo {
+        max-width: 100px;
+    }
+
+    #himno-btn {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+    }
+
+    .video-wrapper {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-logo {
+        max-width: 80px;
+    }
+
+    #himno-btn {
+        font-size: 0.85rem;
+    }
+
+    .video-wrapper {
+        max-width: 100%;
+    }
 }
